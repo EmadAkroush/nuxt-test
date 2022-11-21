@@ -31,7 +31,18 @@ export default {
   },
 
   fetch() {
-    const imgdata = [
+    this.fetchProduct()
+  },
+  methods: {
+    getvaluerating(value , id) {
+      console.log("this is " , value , id)
+    },
+    Refreshpage() {
+      this.fetchProduct()
+    },
+    fetchProduct(){
+      this.carddata = []
+      const imgdata = [
       '/img/img0.jpg',
       '/img/img1.jpg',
       '/img/img2.jpg',
@@ -46,15 +57,9 @@ export default {
         descrition:
           ' این هست توضیحات آزمایشی متن این هست توضیحات آزمایشی متن  این هست توضیحات آزمایشی متن این هست توضیحات آزمایشی متن ',
         price: '$25.82'
+        
       })
     }
-  },
-  methods: {
-    getvaluerating(value , id) {
-      console.log("this is " , value , id)
-    },
-    Refreshpage() {
-      location.reload();
     }
   },
 
