@@ -119,7 +119,7 @@ export default {
             title: res.data[index].title,
             body:  res.data[index].body,
             img: this.imgdata[Math.floor(Math.random() * this.imgdata.length)] 
-            
+
         } )
       }
       console.log(this.dataprocces);

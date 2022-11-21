@@ -8,6 +8,18 @@
       app
     >
       <v-list>
+        <v-list-item>
+          <div v-if="$auth.loggedIn">
+              {{ $auth.user.email }} 
+              <v-btn text >
+                 Logout 
+              </v-btn>
+          </div>
+          <div v-else>
+             <v-btn text to="/login"> Login  </v-btn>
+             <v-btn text to="/register"> Register  </v-btn>
+          </div>
+        </v-list-item>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -40,6 +52,7 @@
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
+       
     </v-app-bar>
     <v-main>
       <v-container>
