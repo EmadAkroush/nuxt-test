@@ -21,6 +21,7 @@
 <script>
 import CardDetails from '~/components/CardDetails.vue'
 export default {
+  middleware: 'log'
   data() {
     return {
       carddata: [
