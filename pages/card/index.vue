@@ -9,7 +9,6 @@
       <v-row>
         <v-col>
           <v-pagination
-      v-model="page"
       :length="6"
       @input="Refreshpage"
     ></v-pagination>
@@ -21,7 +20,7 @@
 <script>
 import CardDetails from '~/components/CardDetails.vue'
 export default {
-  middleware: 'log'
+  middleware: 'log' ,
   data() {
     return {
       carddata: [
@@ -72,7 +71,5 @@ export default {
 }
 </script>
 <style>
-.main {
-  /* background-image: url(../../assets/img/img.jpg); */
-}
+
 </style>

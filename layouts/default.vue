@@ -16,7 +16,10 @@
               </v-btn>
           </div>
           <div v-else>
-             <v-btn text to="/login"> Login  </v-btn>
+            <NuxtLink to="login">
+              <v-btn text > login   </v-btn>
+           </NuxtLink>
+            
              <v-btn text to="/register"> Register  </v-btn>
           </div>
         </v-list-item>
