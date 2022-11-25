@@ -1,22 +1,22 @@
 
 export const state = () => ({
-  apikey: ''
+  apikey: '11'
 })
 
 export const getters = {
-  getCounter(state) {
+  getapi(state) {
     return state.apikey
   }
 }
 
 export const mutations = {
-  increment(state) {
-    state.counter++
+  getapi(state , number) {
+    state.apikey = number
   }
 }
 
 export const actions = {
-   fetchCounter({ state }) {
+   fetchCounter({ state  }) {
     // make request
     const res = { data: 10 };
     state.counter = res.data;

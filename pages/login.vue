@@ -30,7 +30,7 @@
 
 <script>
 import UserAuthForm from '~/components/UserAuthForm.vue'
-  
+
 
 export default {
    
@@ -54,20 +54,27 @@ export default {
         
  
       }).then(result => {
-         console.log(result)
-
+         console.log("ster" , this.apikeyLocal );
+         
+       
          localStorage.setItem( this.apikeyLocal , "1112222333###");
          
-         this.$store.getters.apikey = localStorage.getItem(this.apikeyLocal );
-
+         this.$store.getters.getapi = localStorage.getItem(this.apikeyLocal );
          
+
+         console.log(result)
       }).cath(e => console.log(e));
 
     }
     
    } ,
    created() {
-      console.log( "test store" , this.$store.getters.apikey );
+
+      console.log( "test store" , this.$store.getters.getapi );
+      this.$store.commit('getapi' , 1000)
+      console.log( "test next" , this.$store.getters.getapi );
+
+      
    }
   
 }
