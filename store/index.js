@@ -1,7 +1,8 @@
 
 export const state = () => ({
   apikey: '11' ,
-  cookies : ''
+  cookies : '' ,
+  logout  : false
 })
 
 export const getters = {
@@ -10,6 +11,9 @@ export const getters = {
   },
   getCookies(state) {
     return state.cookies
+  },
+  getLogout(state) {
+    return state.logout
   }
 
 
@@ -21,6 +25,9 @@ export const mutations = {
   },
   getCookies(state , cookie){
     state.cookies = cookie
+  },
+  getLogout(state , boolian) {
+    state.logout = boolian
   }
 }
 

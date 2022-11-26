@@ -17,10 +17,10 @@
           </div>
           <div v-else>
             <NuxtLink to="login">
-              <v-btn text > login   </v-btn>
+              <v-btn text > login  </v-btn>
            </NuxtLink>
             
-             <v-btn text to="/register"> Register  </v-btn>
+             <v-btn text v-show="this.$store.getters.getLogout" @click="logout()" > logout  </v-btn>
           </div>
         </v-list-item>
         <v-list-item>
@@ -102,5 +102,14 @@ export default {
       title: 'Vuetify.js',
     }
   },
+  methods: {
+    logout() {
+      this.$store.commit('getLogout' ,  false)
+      this.$cookies.remove('Tokens' ,{
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7
+   })
+    }
+  }
 }
 </script>
