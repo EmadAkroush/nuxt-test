@@ -49,6 +49,7 @@
 </template>
 <script>
 export default {
+  middleware: 'log' ,
   data() {
     return {
       imgdata : [

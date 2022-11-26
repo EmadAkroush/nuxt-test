@@ -1,9 +1,9 @@
  export default function (context) {
-    console.log("middleware is running");
-    if(context.store.getters.apikey == null ){
+  context.store.dispatch('setAction' )
+    if( !context.store.getters.getCookies  ){
       
-      context.redirect("/post");
+      context.redirect("/login");
 
-    }
+    } 
 
  }

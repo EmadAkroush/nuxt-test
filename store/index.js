@@ -1,25 +1,41 @@
 
 export const state = () => ({
-  apikey: '11'
+  apikey: '11' ,
+  cookies : ''
 })
 
 export const getters = {
   getapi(state) {
     return state.apikey
+  },
+  getCookies(state) {
+    return state.cookies
   }
+
+
 }
 
 export const mutations = {
-  getapi(state , number) {
+  getApi(state , number) {
     state.apikey = number
+  },
+  getCookies(state , cookie){
+    state.cookies = cookie
   }
 }
 
 export const actions = {
-   fetchCounter({ state  }) {
+   getApiAction( context , input ) {
     // make request
-    const res = { data: 10 };
-    state.counter = res.data;
-    return res.data;
+    this.$cookies.set(`Tokens`, input , {
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7
+   })
+   context.commit('getCookies', this.$cookies.get('Tokens'))
+
+  },
+  setAction( context ){
+    context.commit('getCookies', this.$cookies.get('Tokens'))
   }
+  
 }
